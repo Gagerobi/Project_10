@@ -1,0 +1,244 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.nav-item {
+  border-right: 1px solid #bbb;
+}
+
+.nav-item:last-child {
+  border-right: none;
+}
+
+.nav-item a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-item a:hover:not(.active) {
+  background-color: #111;
+}
+
+.nav-item .active {
+  background-color: rgb(122, 255, 255);
+  color: #111;
+}
+
+.nav-item a:hover {
+  background-color: rgb(122, 255, 255);
+  opacity: 75%;
+}
+
+body {
+  background-color: #cfcfcf;
+  font-family: Georgia, serif;
+}
+
+header {
+  background-image: url("https://media.istockphoto.com/id/468881510/vector/80s-retro-sci-fi-background.jpg?s=612x612&w=0&k=20&c=X5eDGLmlX_YM4ApBPHREBz_dcck8hyj6jJXP9ddOqdw=");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-style: double;
+  border-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  padding: 10px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 0;
+  justify-content: center;
+}
+
+.grid::after {
+  clear: both;
+  display: grid;
+}
+
+.images {
+  padding: 10px 10px 15px 5px;
+  flex: 1;
+}
+
+.image {
+  border-style: ridge;
+  border-color: rgb(122, 255, 255);
+  animation-name: img-frame;
+  animation-duration: 4s;
+  transition: filter 0.3s ease-in-out;
+  filter: drop-shadow(0px 8px 8px black);
+}
+
+.images:hover .image {
+  filter: grayscale(100%) drop-shadow(0px 8px 8px black);
+  border-color: black;
+  transform: scale(1.02);
+}
+
+@keyframes img-frame {
+  0% {
+    border-color: rgb(0, 255, 255);
+  }
+  25% {
+    border-color: rgb(21, 0, 248);
+  }
+  50% {
+    border-color: rgb(157, 0, 255);
+  }
+  75% {
+    border-color: rgb(122, 255, 255);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.footer-text {
+  text-align: center;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  border-style: double;
+  border-color: white black;
+}
+
+.content {
+  padding: 60px 10% 0%;
+}
+
+.main-text {
+  background-color: rgb(122, 255, 255);
+  border-style: double;
+}
+
+.paragraph {
+  text-indent: 50px;
+}
+
+.overview {
+  max-width: 10%;
+  margin: auto;
+  text-align: left;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  place-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
+  transition: all 0.4s ease-in;
+}
+
+.main-dark-mode {
+  background-color: #374849;
+  color: #f0f0f0;
+  transition: all 0.4s ease-in;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.13rem;
+  margin-bottom: 0.63rem;
+  margin-inline: auto;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: all 0.4s ease-in;
+  border-radius: 2.13rem;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.63rem;
+  width: 1.63rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 2px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.63rem);
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 0;
+  justify-content: center;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  flex: 0 0 32%;
+  height: 300px;
+  margin: 5px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+  font-size: 30px;
+}/*# sourceMappingURL=website.css.map */
